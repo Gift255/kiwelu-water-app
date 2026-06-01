@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#f0f4f8">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar" android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" android:background="#00838f"
+        app:titleTextColor="#fff" app:title="Submit Reading"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp" app:cardElevation="4dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Customer" android:layout_marginBottom="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <AutoCompleteTextView
+                            android:id="@+id/acCustomer" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:completionThreshold="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp" app:cardBackgroundColor="#e3f2fd"
+                        app:cardCornerRadius="8dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:padding="12dp" android:orientation="horizontal">
+                            <TextView android:text="Previous Reading: " android:textColor="#555"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <TextView android:id="@+id/tvPrevReading" android:text="—"
+                                android:textStyle="bold" android:textColor="#1565C0"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Current Reading (m³)" android:layout_marginBottom="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCurrentReading" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="numberDecimal"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Comment (optional)" android:layout_marginBottom="24dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etComment" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="textMultiLine"
+                            android:lines="2"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_gravity="center"
+                        android:visibility="gone" android:layout_marginBottom="8dp"/>
+
+                    <Button android:id="@+id/btnSubmit" android:layout_width="match_parent"
+                        android:layout_height="52dp" android:text="Submit Reading"
+                        android:backgroundTint="#00838f" android:textColor="#fff"
+                        android:textStyle="bold" android:textSize="16sp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

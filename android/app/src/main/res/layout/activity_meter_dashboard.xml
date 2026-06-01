@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#f0f4f8">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar" android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" android:background="#00838f"
+        app:titleTextColor="#ffffff" app:title="Meter Reader"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <TextView android:id="@+id/tvWelcome" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textColor="#00838f" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+            <!-- Stats row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="16dp">
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="90dp" android:layout_weight="1" android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="10dp" app:cardBackgroundColor="#1565C0">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvAssigned" android:text="—" android:textSize="24sp"
+                            android:textStyle="bold" android:textColor="#fff"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:text="Customers" android:textColor="#bbdefb" android:textSize="11sp"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="90dp" android:layout_weight="1" android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="10dp" app:cardBackgroundColor="#e65100">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvPending" android:text="—" android:textSize="24sp"
+                            android:textStyle="bold" android:textColor="#fff"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:text="Pending" android:textColor="#ffe0b2" android:textSize="11sp"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_height="90dp" android:layout_weight="1"
+                    app:cardCornerRadius="10dp" app:cardBackgroundColor="#2e7d32">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvToday" android:text="—" android:textSize="24sp"
+                            android:textStyle="bold" android:textColor="#fff"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <TextView android:text="Today" android:textColor="#c8e6c9" android:textSize="11sp"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Action cards -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardAddReading"
+                android:layout_width="match_parent" android:layout_height="70dp"
+                android:layout_marginBottom="10dp" app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                    <TextView android:text="📊" android:textSize="28sp" android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Submit Meter Reading" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#1565C0"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardMyReadings"
+                android:layout_width="match_parent" android:layout_height="70dp"
+                android:layout_marginBottom="10dp" app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                    <TextView android:text="📋" android:textSize="28sp" android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="My Readings" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#00838f"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardAddCustomer"
+                android:layout_width="match_parent" android:layout_height="70dp"
+                app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                    <TextView android:text="➕" android:textSize="28sp" android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Register New Customer" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#2e7d32"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

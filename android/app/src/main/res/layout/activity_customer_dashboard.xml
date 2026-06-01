@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#f0f4f8">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar" android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" android:background="#4a148c"
+        app:titleTextColor="#ffffff" app:title="My Account"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <TextView android:id="@+id/tvWelcome" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="16sp"
+                android:textColor="#4a148c" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+            <!-- Balance card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="16dp"
+                app:cardElevation="6dp" app:cardBackgroundColor="#4a148c">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="24dp" android:gravity="center">
+                    <TextView android:text="Outstanding Balance" android:textColor="#e1bee7"
+                        android:textSize="13sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvBalance" android:text="TZS —"
+                        android:textSize="32sp" android:textStyle="bold" android:textColor="#fff"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Last bill -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="📄 Last Bill" android:textSize="12sp"
+                        android:textColor="#888" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvLastBill" android:text="—" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#212121"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Last payment -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="💳 Last Payment" android:textSize="12sp"
+                        android:textColor="#888" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvLastPayment" android:text="—" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#212121"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action buttons -->
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardBills"
+                android:layout_width="match_parent" android:layout_height="70dp"
+                android:layout_marginBottom="10dp" app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                    <TextView android:text="📋" android:textSize="28sp" android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="My Bills" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#1565C0"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardPayments"
+                android:layout_width="match_parent" android:layout_height="70dp"
+                app:cardCornerRadius="12dp" app:cardElevation="3dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp">
+                    <TextView android:text="💰" android:textSize="28sp" android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="My Payments" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="#2e7d32"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
